@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parserror.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 03:29:22 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/24 16:50:44 by sgah             ###   ########.fr       */
+/*   Created: 2020/01/24 17:13:51 by sgah              #+#    #+#             */
+/*   Updated: 2020/01/24 17:57:15 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int ac, char **av)
-{
-	t_cub	*info;
+#include "cub3d.h"
 
-	info = parse(av[1]);
+void		clean_info(t_cub *info)
+{
+	free(info);
+}
+
+void		parserror(t_cub *info)
+{
+	clean_info(info);
+	write(1, "Error\n", 6);
+	exit(0);
 }
