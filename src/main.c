@@ -6,17 +6,20 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:29:22 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:39:36 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/28 17:01:36 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		main(int ac, char **av)
+
+int			main(int ac, char **av)
 {
 	t_cub	*info;
 	t_god	*create;
 
+	if (!ft_strnstr(av[1], ".cub", ft_strlen(av[1])))
+		parserror(NULL);
 	info = parser(av[1]);
 	create = creation(info);
 	if (ac == 3 && !ft_strncmp(av[2], "-save", 5))
