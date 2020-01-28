@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:52:33 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:22:55 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/28 05:21:47 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,5 +227,8 @@ void				draw_pixel(t_window *window, unsigned int x, unsigned int y,
 int					get_nth_pixel_distance(t_god *game, int screen_x);
 void				jump(t_god *game);
 void				update_jump(t_god *game);
+int					screenshot(t_god *game);
+void				int_to_char(int n, unsigned char *src);
+int					get_pixel(t_window *window, unsigned int x, unsigned int y);
 
 #endif
