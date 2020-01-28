@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parserror.c                                        :+:      :+:    :+:   */
+/*   destroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 17:13:51 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/24 17:57:15 by sgah             ###   ########.fr       */
+/*   Created: 2020/01/28 02:10:41 by sgah              #+#    #+#             */
+/*   Updated: 2020/01/28 02:13:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void		clean_info(t_cub *info)
+void	free_2d_array(int **array, int x)
 {
-	free(info);
+	while (x--)
+		free(array[x]);
+	free(array);
 }
 
-void		parserror(t_cub *info)
+void		destroy_sprite(void *content)
 {
-	clean_info(info);
-	write(1, "Error\n", 6);
-	exit(0);
+	free(content);
+}
+
+
+void		free_ray_array(t_ray **rays)
+{
+	int i;
+
+	i = RAYS;
+	while (i--)
+		free(rays[i]);
+	free(rays);
 }

@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   math.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 03:29:22 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:39:36 by sgah             ###   ########.fr       */
+/*   Created: 2020/01/28 01:55:51 by sgah              #+#    #+#             */
+/*   Updated: 2020/01/28 02:51:49 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		main(int ac, char **av)
+float	deg_to_rad(float a)
 {
-	t_cub	*info;
-	t_god	*create;
+	return (a / 360 * (2 * M_PI));
+}
 
-	info = parser(av[1]);
-	create = creation(info);
-	if (ac == 3 && !ft_strncmp(av[2], "-save", 5))
-		create->screenshot = 1;
-	clean_info(info);
-	create->draw = &draw_game;
-	mlx_loop(create->window->mlx_ptr);
-	stop_game(create);
-	return (0);
+float	dist(float a, float b, float x, float y)
+{
+	return (sqrt(pow(a - x, 2) + pow(b - y, 2)));
+}
+
+int		max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+int		min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+float	mod(float a, float b)
+{
+	a -= b * fabs((float)((int)(a / b)));
+	if (a >= 0)
+		return (a);
+	return (a + b);
 }

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 03:29:22 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:39:36 by sgah             ###   ########.fr       */
+/*   Created: 2020/01/24 17:13:51 by sgah              #+#    #+#             */
+/*   Updated: 2020/01/27 04:41:22 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		main(int ac, char **av)
+static void 	destroy(void *content)
 {
-	t_cub	*info;
-	t_god	*create;
+	free(content);
+}
 
-	info = parser(av[1]);
-	create = creation(info);
-	if (ac == 3 && !ft_strncmp(av[2], "-save", 5))
-		create->screenshot = 1;
-	clean_info(info);
-	create->draw = &draw_game;
-	mlx_loop(create->window->mlx_ptr);
-	stop_game(create);
-	return (0);
+void			clean_info(t_cub *info)
+{
+	if (info && info->map_tmp)
+		ft_lstclear(&info->map_tmp, &destroy);
+	free(info);
+}
+
+void			parserror(t_cub *info)
+{
+	if (info)
+		clean_info(info);
+	write(1, "Error\n", 6);
+	exit(0);
 }
