@@ -9,7 +9,7 @@ NAME	= cub3d
 CUB3D	= main.c parser.c parse_error.c parse_info.c get_next_line.c create.c \
 		get_next_line_utils.c debug.c mapper.c create_ray.c raycast.c\
 		create_window.c events.c destroy.c textures.c math.c create_game.c create_game1.c \
-		create_game2.c create_sprite.c
+		create_game2.c create_sprite.c screenshot.c
 #create_sprite.c
 
 LIBFT	= ./libft/libft.a
@@ -26,11 +26,10 @@ LIB		= -I./include -L./libft -lft
 F_MLX	= -Imlx -L./mlx -lmlx -framework OpenGL -framework AppKit -lm
 
 $(MLX):
-	make -C ./mlx
-	@cp ./mlx/libmlx.a .
+	#make -C ./mlx
 
 $(LIBFT):
-	make bonus -C ./libft
+	#make bonus -C ./libft
 
 $(NAME):  $(LIBFT) $(MLX) $(OBJ)
 	@echo "\n\033[01mThe compilation of \033[00m"
@@ -46,16 +45,16 @@ $(NAME):  $(LIBFT) $(MLX) $(OBJ)
 all: $(NAME)
 
 clean:
-	make -C ./mlx clean
-	make -C ./libft clean
+	#make -C ./mlx clean
+	#make -C ./libft clean
 	@rm -rf $(BUILD)
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	make -C ./mlx fclean
-	make -C ./libft fclean
-	rm -rf libmlx.a
+	#make -C ./mlx fclean
+	#make -C ./libft fclean
+	#rm -rf libmlx.a
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
 
 re: fclean all

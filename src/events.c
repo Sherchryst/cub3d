@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 01:22:21 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:19:41 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/28 05:14:08 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void		rotate(t_god *game, int direction)
 
 void		stop_game(t_god *game)
 {
-//	if (game->screenshot)
-//		screenshot(game);
+	if (game->screenshot)
+		screenshot(game);
 	destroy_texture(game->window->mlx_ptr, game->world->n);
 	destroy_texture(game->window->mlx_ptr, game->world->s);
 	destroy_texture(game->window->mlx_ptr, game->world->e);
