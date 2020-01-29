@@ -1,9 +1,9 @@
 R 1000 600
 
 NO ./res/wall_1.xpm
-SO ./res/wall_2.xpm
-WE ./res/wall_3.xpm
-EA ./res/wall_4.xpm
+SO ./res/bluestone.xpm
+WE ./res/wood.xpm
+EA ./res/purplestone.xpm
 S ./res/pillar.xpm
 
 C 200,200,230

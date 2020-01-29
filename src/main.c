@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:29:22 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 02:33:19 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 05:59:01 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int			main(int ac, char **av)
 		parserror(NULL);
 	info = parser(av[1]);
 	create = creation(info);
+	clean_info(info);
 	if (ac == 3 && !ft_strncmp(av[2], "-save", 5))
 		create->screenshot = 1;
 	create->draw = &draw_game;
-	clean_info(info);
 	mlx_loop(create->window->mlx_ptr);
 	stop_game(create);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 02:41:41 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 02:15:55 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 06:35:03 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_2d_array(int **array, int x, int y)
 		printf("\n");
 	}
 }
-/*
+
 void	print_ray_array(t_ray **rays)
 {
 	int i;
@@ -39,7 +39,7 @@ void	print_ray_array(t_ray **rays)
 	}
 }
 
-
+/*
 void	fill_map_borders(int **array, int x, int y)
 {
 	int i;
@@ -70,7 +70,7 @@ void	print_world(t_world *world)
 	printf("\nAngle: %f\n", world->angle);
 	printf("Position: (%10f, %10f)\n", world->px, world->py);
 }
-
+*/
 void	print_info(t_cub *info)
 {
 	printf("Width: %d\nHeight: %d\n", info->width, info->height);
@@ -81,7 +81,7 @@ void	print_info(t_cub *info)
 	printf("Floor: %d, %d, %d\n", info->floor[0], info->floor[1],
 			info->floor[2]);
 }
-
+/*
 
 void	print_list(t_list *lst)
 {
