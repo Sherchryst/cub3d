@@ -1,7 +1,8 @@
 # DIRECTORIES
-DEP_DIR	= dep
-OBJ_DIR	= obj
-DIR		= $(DEP_DIR) $(OBJ_DIR)
+BUILD	= .build
+DEP_DIR	= $(BUILD)/dep
+OBJ_DIR	= $(BUILD)/obj
+DIRS	:= $(DEP_DIR) $(OBJ_DIR)
 
 # FILES
 NAME	= libft.a
@@ -36,20 +37,20 @@ bonus: $(NAME) $(OBJ_B)
 	@ar -rcs $(NAME) $^
 
 clean:
-	rm -rf $(DIR)
+	@rm -rf $(BUILD)
+	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[1;34mExecute:\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
 
-$(DEP_DIR):
-	mkdir $@
+$(BUILD):
+	@echo "\033[1;32m\nCreation of .build\033[0m \n"
+	@mkdir $@ $(DIRS)
 
-$(OBJ_DIR):
-	mkdir $@
-
-$(OBJ_DIR)/%.o: %.c | $(DIR)
+$(OBJ_DIR)/%.o: %.c | $(BUILD)
 	@echo "\033[1;34mExecute: \t\033[1;33mCompilation of \033[1;36m$(notdir $<)\033[0m"
 	@$(CC) $(CFLAGS) $(DFLAGS) $(IFLAGS) -c $< -o $@
 
