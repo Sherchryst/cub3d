@@ -42,7 +42,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[1;34mExecute:\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
+	@echo "\033[1;34mExecute:\t\033[1;33mCleaning libs\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
 

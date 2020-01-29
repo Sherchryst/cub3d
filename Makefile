@@ -10,10 +10,9 @@ CUB3D	= main.c parser.c parse_error.c parse_info.c get_next_line.c create.c \
 		get_next_line_utils.c mapper.c create_ray.c raycast.c\
 		create_window.c events.c destroy.c textures.c math.c create_game.c create_game1.c \
 		create_game2.c create_sprite.c screenshot.c minimap.c debug.c
-#create_sprite.c
 
 LIBFT	= ./libft/libft.a
-MLX		= ./mlx/libmlx.a
+MLX		= libmlx.a
 SRC		= $(CUB3D)
 DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
@@ -24,12 +23,6 @@ CFLAGS	= -Wall -Werror -Wextra -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 LIB		= -I./include -L./libft -lft
 F_MLX	= -Imlx -L./mlx -lmlx -framework OpenGL -framework AppKit -lm
-
-$(MLX):
-	@make -C ./mlx > /dev/zero
-
-$(LIBFT):
-	make bonus -C ./libft
 
 $(NAME):  $(MLX) $(LIBFT) $(OBJ)
 	@echo "\n\033[01mThe compilation of \033[00m"
@@ -42,18 +35,22 @@ $(NAME):  $(MLX) $(LIBFT) $(OBJ)
 	@echo "\033[32m				\033[03mHas been achieved!\n\033[00m"
 	@$(CC) $(LIB) $(F_MLX) $(OBJ) $(LIBFT) -o $(NAME)
 
+$(MLX):
+	@make -C ./mlx
+
+$(LIBFT):
+	@make bonus -C ./libft
+
 all: $(NAME)
 
 clean:
-	make -C ./mlx clean
-	make -C ./libft clean
 	@rm -rf $(BUILD)
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	make -C ./mlx fclean
-	make -C ./libft fclean
+	@make -C ./mlx clean
+	@make -C ./libft fclean
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning exec\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
