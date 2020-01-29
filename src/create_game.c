@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 02:21:37 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 02:41:46 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 17:26:20 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		draw_ceil_ground(t_god *game)
 	draw_rect(game->window, rect, game->world->color_ground);
 }
 
-void	clear_data(t_window *window)
+void		clear_data(t_window *window)
 {
 	t_rect			rect;
 	unsigned char	color[4];
@@ -41,7 +41,7 @@ void	clear_data(t_window *window)
 	draw_rect(window, rect, color);
 }
 
-void	update(t_god *game)
+void		update(t_god *game)
 {
 	if (game->keys->k_right)
 		rotate(game, 1);
@@ -58,7 +58,7 @@ void	update(t_god *game)
 	update_jump(game);
 }
 
-void	draw_game(t_god *game)
+void		draw_game(t_god *game)
 {
 	update(game);
 	mlx_clear_window(game->window->mlx_ptr, game->window->win_ptr);

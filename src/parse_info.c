@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 01:20:55 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 02:50:33 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 17:44:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		parse_resolution(char *line, t_cub *info)
 
 void		parse_texture(char *line, t_cub *info)
 {
-	char 	type[2];
+	char	type[2];
 
 	while (ft_isspace(*line))
 		line++;

@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_error.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 17:13:51 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:41:33 by sgah             ###   ########.fr       */
+/*   Created: 2019/09/10 14:57:42 by sgah              #+#    #+#             */
+/*   Updated: 2019/10/15 14:36:07 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
 
-static void		destroy(void *content)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	free(content);
-}
+	char	*out;
+	size_t	len_s1;
+	size_t	len_s2;
 
-void			clean_info(t_cub *info)
-{
-	if (info && info->map_tmp)
-		ft_lstclear(&info->map_tmp, &destroy);
-	free(info);
-}
-
-void			parserror(t_cub *info)
-{
-	if (info)
-		clean_info(info);
-	write(1, "Error\n", 6);
-	exit(0);
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	if (!(out = (char *)malloc(len_s1 + len_s2 + 1)))
+		return (NULL);
+	ft_memcpy(out, s1, len_s1 + 1);
+	ft_memcpy(out + len_s1, s2, len_s2 + 1);
+	return (out);
 }

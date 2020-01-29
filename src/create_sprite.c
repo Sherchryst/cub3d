@@ -6,13 +6,13 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 01:32:47 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:17:14 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 17:49:52 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		get_nth_pixel_distance(t_god *game, int screen_x)
+int			get_nth_pixel_distance(t_god *game, int screen_x)
 {
 	int target;
 
@@ -96,7 +96,6 @@ static void	draw_sprites_while2(t_god *game, t_sprite *sprite, int x, int y)
 	if (sprite->color[3] != 255)
 		draw_pixel(game->window, x, y, sprite->color);
 }
-
 
 void		draw_sprites(t_god *game)
 {

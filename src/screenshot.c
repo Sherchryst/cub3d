@@ -6,13 +6,13 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 05:16:23 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 04:44:55 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 17:50:34 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		get_pixel(t_window *window, unsigned int x, unsigned int y)
+int			get_pixel(t_window *window, unsigned int x, unsigned int y)
 {
 	int	ptr;
 
@@ -22,7 +22,7 @@ int		get_pixel(t_window *window, unsigned int x, unsigned int y)
 	return ((ptr & 0xFF0000) | (ptr & 0x00FF00) | (ptr & 0x0000FF));
 }
 
-void	int_to_char(int n, unsigned char *src)
+void		int_to_char(int n, unsigned char *src)
 {
 	src[0] = (unsigned char)(n);
 	src[1] = (unsigned char)(n >> 8);

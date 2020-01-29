@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_error.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 17:13:51 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:41:33 by sgah             ###   ########.fr       */
+/*   Created: 2019/09/15 15:44:01 by sgah              #+#    #+#             */
+/*   Updated: 2019/10/15 23:20:45 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
 
-static void		destroy(void *content)
+t_list		*ft_lstnew(void *content)
 {
-	free(content);
-}
+	t_list	*new;
 
-void			clean_info(t_cub *info)
-{
-	if (info && info->map_tmp)
-		ft_lstclear(&info->map_tmp, &destroy);
-	free(info);
-}
-
-void			parserror(t_cub *info)
-{
-	if (info)
-		clean_info(info);
-	write(1, "Error\n", 6);
-	exit(0);
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

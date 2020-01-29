@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 01:22:21 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 05:14:08 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 17:48:25 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ void		stop_game(t_god *game)
 	exit(EXIT_SUCCESS);
 }
 
-int	program_exited(void *game)
+int			program_exited(void *game)
 {
 	stop_game((t_god *)game);
 	exit(0);
 }
 
-int	key_released(int key, void *game)
+int			key_released(int key, void *game)
 {
 	if (key == 126)
 		((t_god*)game)->keys->k_up = 0;
@@ -75,7 +75,7 @@ int	key_released(int key, void *game)
 	return (0);
 }
 
-int	key_pressed(int key, void *game)
+int			key_pressed(int key, void *game)
 {
 	if (key == 12 || key == 53)
 		stop_game(game);

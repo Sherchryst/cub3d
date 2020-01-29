@@ -6,13 +6,13 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 02:28:34 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 01:13:38 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 17:27:55 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	draw_hud(t_god *game)
+void		draw_hud(t_god *game)
 {
 	t_rect			rect;
 	unsigned char	color[4];
@@ -28,7 +28,7 @@ void	draw_hud(t_god *game)
 	draw_rect(game->window, rect, color);
 }
 
-void	draw_pixel(t_window *window, unsigned int x, unsigned int y,
+void		draw_pixel(t_window *window, unsigned int x, unsigned int y,
 	unsigned char color[4])
 {
 	int index;

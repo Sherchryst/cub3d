@@ -6,13 +6,13 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 02:44:31 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:22:23 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 17:29:37 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	update_jump(t_god *game)
+void		update_jump(t_god *game)
 {
 	if (game->world->jump_time >= 0)
 	{
@@ -27,7 +27,7 @@ void	update_jump(t_god *game)
 	}
 }
 
-void	jump(t_god *game)
+void		jump(t_god *game)
 {
 	if (game->world->jump_time == -1)
 		game->world->jump_time = 0;
@@ -77,7 +77,7 @@ void		go(t_god *game, int direction)
 	}
 }
 
-void	draw_rect(t_window *window, t_rect rect, unsigned char color[4])
+void		draw_rect(t_window *window, t_rect rect, unsigned char color[4])
 {
 	int i;
 	int j;

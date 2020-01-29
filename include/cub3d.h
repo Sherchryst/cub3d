@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:52:33 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 08:16:57 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 17:51:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ typedef struct		s_raycasting_data {
 typedef struct		s_rect
 {
 	int				x;
-	int 			y;
-	int 			width;
-	int 			height;
+	int				y;
+	int				width;
+	int				height;
 }					t_rect;
 
 typedef struct		s_texture
@@ -154,7 +154,7 @@ typedef struct		s_god
 
 typedef struct		s_cub
 {
-		void		*mlx_tmp;
+	void			*mlx_tmp;
 	t_texture		*e;
 	t_texture		*w;
 	t_texture		*n;
@@ -213,7 +213,8 @@ int					min(int a, int b);
 int					max(int a, int b);
 float				dist(float a, float b, float x, float y);
 float				deg_to_rad(float a);
-void				draw_rect(t_window *window, t_rect rect, unsigned char color[4]);
+void				draw_rect(t_window *window, t_rect rect,
+					unsigned char color[4]);
 void				rotate_ray_array(t_ray **rays, float angle);
 void				rotate(t_god *game, int direction);
 void				go(t_god *game, int direction);

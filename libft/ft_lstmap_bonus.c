@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_error.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 17:13:51 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:41:33 by sgah             ###   ########.fr       */
+/*   Created: 2019/09/15 17:25:23 by sgah              #+#    #+#             */
+/*   Updated: 2019/10/16 00:21:35 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
 
-static void		destroy(void *content)
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *))
 {
-	free(content);
-}
+	t_list	*first;
+	t_list	*the_one;
 
-void			clean_info(t_cub *info)
-{
-	if (info && info->map_tmp)
-		ft_lstclear(&info->map_tmp, &destroy);
-	free(info);
-}
-
-void			parserror(t_cub *info)
-{
-	if (info)
-		clean_info(info);
-	write(1, "Error\n", 6);
-	exit(0);
+	if (!f && !lst)
+		return (NULL);
+	if (!(first = ft_lstnew(f(lst->content))))
+		return (NULL);
+	the_one = first;
+	lst = lst->next;
+	while (lst)
+	{
+		if (!(the_one->next = ft_lstnew(f(lst->content))))
+			return (NULL);
+		the_one = the_one->next;
+		lst = lst->next;
+	}
+	return (first);
 }

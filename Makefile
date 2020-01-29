@@ -18,7 +18,7 @@ DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 # COMPILATION
-CC		= gcc
+CC		= gcc -g3 -fsanitize=address
 CFLAGS	= -Wall -Werror -Wextra -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 LIB		= -I./include -L./libft -lft

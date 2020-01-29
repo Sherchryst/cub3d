@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   destroy.c                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 02:10:41 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:35:07 by sgah             ###   ########.fr       */
+/*   Created: 2019/08/20 22:08:11 by sgah              #+#    #+#             */
+/*   Updated: 2019/09/10 16:41:51 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
 
-void		free_2d_array(int **array, int x)
-{
-	while (x--)
-		free(array[x]);
-	free(array);
-}
-
-void		destroy_sprite(void *content)
-{
-	free(content);
-}
-
-void		free_ray_array(t_ray **rays)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int i;
 
-	i = RAYS;
-	while (i--)
-		free(rays[i]);
-	free(rays);
+	i = 0;
+	while (src && src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
