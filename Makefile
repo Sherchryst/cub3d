@@ -7,9 +7,9 @@ DIRS	:= $(DEP_DIR) $(OBJ_DIR)
 # FILES
 NAME	= cub3d
 CUB3D	= main.c parser.c parse_error.c parse_info.c get_next_line.c create.c \
-		get_next_line_utils.c mapper.c create_ray.c raycast.c\
-		create_window.c events.c destroy.c textures.c math.c create_game.c create_game1.c \
-		create_game2.c create_sprite.c screenshot.c minimap.c debug.c
+		get_next_line_utils.c mapper.c create_ray.c raycast.c create_game1.c \
+		create_window.c events.c destroy.c textures.c math.c create_game.c \
+		create_game2.c create_sprite.c screenshot.c minimap.c
 
 LIBFT	= ./libft/libft.a
 MLX		= libmlx.a

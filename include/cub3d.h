@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:52:33 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 05:53:10 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 08:16:57 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,8 +231,5 @@ int					screenshot(t_god *game);
 void				int_to_char(int n, unsigned char *src);
 int					get_pixel(t_window *window, unsigned int x, unsigned int y);
 void				draw_minimap(t_god *game);
-
-void				print_2d_array(int **array, int x, int y);
-void	print_info(t_cub *info);
 
 #endif
