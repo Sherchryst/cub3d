@@ -6,24 +6,12 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 02:41:41 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 01:29:47 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 02:15:55 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-/*
-void	print_ray_array(t_ray **rays)
-{
-	int i;
 
-	i = -1;
-	while (++i < RAYS)
-	{
-		printf("Ray (Angle: %f, Distance: %f)\n", rays[i]->angle,
-				rays[i]->distance);
-	}
-}
-*/
 void	print_2d_array(int **array, int x, int y)
 {
 	int i;
@@ -38,6 +26,19 @@ void	print_2d_array(int **array, int x, int y)
 		printf("\n");
 	}
 }
+/*
+void	print_ray_array(t_ray **rays)
+{
+	int i;
+
+	i = -1;
+	while (++i < RAYS)
+	{
+		printf("Ray (Angle: %f, Distance: %f)\n", rays[i]->angle,
+				rays[i]->distance);
+	}
+}
+
 
 void	fill_map_borders(int **array, int x, int y)
 {
@@ -61,7 +62,7 @@ void	fill_map_borders(int **array, int x, int y)
 	array[3][3] = 1;
 }
 
-/*void	print_world(t_world *world)
+void	print_world(t_world *world)
 {
 	print_ray_array(world->rays);
 	printf("\n");
@@ -69,7 +70,7 @@ void	fill_map_borders(int **array, int x, int y)
 	printf("\nAngle: %f\n", world->angle);
 	printf("Position: (%10f, %10f)\n", world->px, world->py);
 }
-*/
+
 void	print_info(t_cub *info)
 {
 	printf("Width: %d\nHeight: %d\n", info->width, info->height);
@@ -91,4 +92,4 @@ void	print_list(t_list *lst)
 	}
 	printf("NULL");
 }
-
+*/

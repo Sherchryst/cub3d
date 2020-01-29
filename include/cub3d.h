@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:52:33 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 05:21:47 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 02:41:20 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@
 #  define INF 100000000.0
 # endif
 
-typedef struct	s_raycasting_data {
-	int	i;
-	int	res;
-	int	d;
-	int	x;
-	int	y;
-	int	a;
-}				t_raycasting_data;
+typedef struct		s_raycasting_data {
+	int				i;
+	int				res;
+	int				d;
+	int				x;
+	int				y;
+	int				a;
+}					t_raycasting_data;
 
 typedef struct		s_rect
 {
@@ -56,7 +56,7 @@ typedef struct		s_texture
 	char			*data;
 }					t_texture;
 
-typedef struct	s_sprite
+typedef struct		s_sprite
 {
 	int				x;
 	int				y;
@@ -77,25 +77,25 @@ typedef struct	s_sprite
 	unsigned char	color[4];
 	int				texture_x;
 	int				texture_y;
-}				t_sprite;
+}					t_sprite;
 
-typedef struct	s_ray
+typedef struct		s_ray
 {
-	float		angle;
-	t_texture	*texture;
-	float		distance;
-	float		side_dist_x;
-	float		side_dist_y;
-	float		delta_dist_x;
-	float		delta_dist_y;
-	float		ray_dir_x;
-	float		ray_dir_y;
-	float		step_x;
-	float		step_y;
-	float		wall_x;
-	int			map_x;
-	int			map_y;
-}				t_ray;
+	float			angle;
+	t_texture		*texture;
+	float			distance;
+	float			side_dist_x;
+	float			side_dist_y;
+	float			delta_dist_x;
+	float			delta_dist_y;
+	float			ray_dir_x;
+	float			ray_dir_y;
+	float			step_x;
+	float			step_y;
+	float			wall_x;
+	int				map_x;
+	int				map_y;
+}					t_ray;
 
 typedef struct		s_keys
 {
@@ -230,5 +230,8 @@ void				update_jump(t_god *game);
 int					screenshot(t_god *game);
 void				int_to_char(int n, unsigned char *src);
 int					get_pixel(t_window *window, unsigned int x, unsigned int y);
+void				draw_minimap(t_god *game);
+
+void				print_2d_array(int **array, int x, int y);
 
 #endif

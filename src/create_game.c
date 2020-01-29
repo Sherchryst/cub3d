@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 02:21:37 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:19:41 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/29 02:41:46 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	draw_game(t_god *game)
 	draw_rays(game);
 	draw_sprites(game);
 	draw_hud(game);
+	draw_minimap(game);
 	if (game->screenshot)
 		stop_game(game);
 	mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr,
