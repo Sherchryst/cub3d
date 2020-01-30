@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 01:05:12 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 07:22:40 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 08:37:42 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void		color_case(int x, int y, t_god *game, unsigned char color[4])
 		set_color(color, 200, 100, 200);
 	else
 		set_color(color, 255, 255, 255);
-	while ((i += 20) < 200)
+	while ((i += 30) < 200)
 	{
 		if (game->world->rays[i]->map_x == x &&
 				game->world->rays[i]->map_y == y)

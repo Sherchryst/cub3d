@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 02:44:31 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:29:37 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 08:28:04 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void		update_jump(t_god *game)
 
 void		jump(t_god *game)
 {
+	FMOD_System_PlaySound(game->system, FMOD_CHANNEL_FREE, game->j, 0, NULL);
 	if (game->world->jump_time == -1)
 		game->world->jump_time = 0;
 }

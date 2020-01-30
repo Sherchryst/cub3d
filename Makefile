@@ -18,10 +18,10 @@ DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 # COMPILATION
-CC		= gcc -g3 -fsanitize=address
+CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
-LIB		= -I./include -L./libft -lft
+LIB		= -I./include -L./libft -lft -L. -lfmodex
 F_MLX	= -Imlx -L./mlx -lmlx -framework OpenGL -framework AppKit -lm
 
 $(NAME):  $(MLX) $(LIBFT) $(OBJ)
@@ -61,7 +61,7 @@ $(BUILD):
 
 $(OBJ_DIR)/%.o: src/%.c | $(BUILD)
 	@echo "\033[1;34mExecute: \t\033[1;33mCompilation of \033[1;36m$(notdir $<)\033[0m"
-	@$(CC) -Iinclude $(CFLAGS) $(DFLAGS) -c $< -o $@
+	@$(CC) -Iinclude -I./inc_fmod $(CFLAGS) $(DFLAGS) -c $< -o $@
 
 -include $(DEP)
 

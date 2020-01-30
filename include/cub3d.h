@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:52:33 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 03:03:16 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 08:22:01 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <fmod.h>
 # include <math.h>
 # include "mlx.h"
 # include "libft.h"
@@ -152,6 +153,8 @@ typedef struct		s_god
 	t_window		*window;
 	t_world			*world;
 	t_keys			*keys;
+	FMOD_SYSTEM		*system;
+	FMOD_SOUND		*j;
 	int				screenshot;
 	void			(*draw)(struct s_god *);
 }					t_god;

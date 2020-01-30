@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 01:22:21 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:48:25 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 08:26:39 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void		stop_game(t_god *game)
 {
 	if (game->screenshot)
 		screenshot(game);
+	FMOD_Sound_Release(game->j);
+	FMOD_System_Close(game->system);
+	FMOD_System_Release(game->system);
 	destroy_texture(game->window->mlx_ptr, game->world->n);
 	destroy_texture(game->window->mlx_ptr, game->world->s);
 	destroy_texture(game->window->mlx_ptr, game->world->e);
