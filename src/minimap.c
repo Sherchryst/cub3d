@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 01:05:12 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 03:34:20 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 07:22:40 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 
 static void		color_case(int x, int y, t_god *game, unsigned char color[4])
 {
-	if (game->world->map[x][y] == 1 || game->world->map[x][y] == 2 ||
-		game->world->map[x][y] == 3)
+	int i;
+
+	i = -1;
+	if (game->world->map[x][y] == 1 || game->world->map[x][y] == 2)
 		set_color(color, 0, 0, 0);
+	else if (game->world->map[x][y] == 3)
+		set_color(color, 200, 100, 200);
 	else
 		set_color(color, 255, 255, 255);
-	if (game->world->rays[100]->map_x == x &&
-			game->world->rays[100]->map_y == y)
-		set_color(color, 100, 100, 100);
+	while ((i += 20) < 200)
+	{
+		if (game->world->rays[i]->map_x == x &&
+				game->world->rays[i]->map_y == y)
+			set_color(color, 100, 100, 100);
+	}
 }
 
 void			draw_minimap(t_god *game)
