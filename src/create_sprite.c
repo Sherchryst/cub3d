@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 01:32:47 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:49:52 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 03:34:20 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ t_list		*create_sprites_array(t_cub *info)
 		y = -1;
 		while (++y < info->map_height)
 		{
-			if (info->map[x][y] == 2)
+			if (info->map[x][y] == 2 || info->map[x][y] == 3)
 			{
 				sprite = ft_calloc(sizeof(t_sprite), 1);
 				sprite->x = x;
 				sprite->y = y;
+				sprite->sprite = sprites(x, y, info);
 				ft_lstadd_back(&res, ft_lstnew(sprite));
 				sprite = NULL;
 			}
@@ -79,20 +80,20 @@ static void	draw_sprites_while2(t_god *game, t_sprite *sprite, int x, int y)
 {
 	sprite->texture_x = ((float)(x - sprite->draw_start_x) /
 			(float)(sprite->draw_end_x - sprite->draw_start_x)) *
-		game->world->sprite->width;
+		sprite->sprite->width;
 	sprite->texture_y = (float)(y - sprite->draw_start_y) /
 		(float)(sprite->draw_end_y - sprite->draw_start_y) *
-		game->world->sprite->height;
+		sprite->sprite->height;
 	if (y < 0 || y >= (int)game->window->height
 			|| x < 0 || x >= (int)game->window->width)
 		return ;
 	if (sprite->texture_x < 0 || sprite->texture_y < 0)
 		return ;
-	if (sprite->texture_x >= game->world->sprite->width ||
-		sprite->texture_y >= game->world->sprite->height)
+	if (sprite->texture_x >= sprite->sprite->width ||
+		sprite->texture_y >= sprite->sprite->height)
 		return ;
-	get_pixel_color(game->world->sprite, sprite->texture_x,
-			sprite->texture_y, sprite->color);
+		get_pixel_color(sprite->sprite, sprite->texture_x,
+				sprite->texture_y, sprite->color);
 	if (sprite->color[3] != 255)
 		draw_pixel(game->window, x, y, sprite->color);
 }

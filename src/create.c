@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 00:48:19 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 03:46:58 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 04:05:08 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void	init_world(t_world *world, t_cub *info)
 	world->o = info->w;
 	world->n = info->n;
 	world->sprite = info->sprite;
+	world->sprite2 = info->sprite2;
 	world->sprites = create_sprites_array(info);
 }
 
@@ -70,5 +71,7 @@ t_god		*creation(t_cub *info)
 	create->keys = create_keys();
 	create->draw = NULL;
 	create->window = create_window(info, create);
+	if (info->px == -42)
+		parserror(NULL);
 	return (create);
 }

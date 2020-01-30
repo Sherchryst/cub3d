@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 01:20:55 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:44:59 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 03:34:20 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,6 @@ void		parse_texture(char *line, t_cub *info)
 		info->s = load_texture(info->mlx_tmp, line);
 	if (type[0] == 'S' && type[1] == ' ')
 		info->sprite = load_texture(info->mlx_tmp, line);
+	if (type[0] == 'S' && type[1] == '2')
+		info->sprite2 = load_texture(info->mlx_tmp, line);
 }

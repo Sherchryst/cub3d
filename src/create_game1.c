@@ -6,11 +6,20 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 02:28:34 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:27:55 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 03:34:20 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+t_texture	*sprites(int x, int y, t_cub *info)
+{
+	if (info->map[x][y] == 2)
+		return (info->sprite);
+	if (info->map[x][y] == 3)
+		return (info->sprite2);
+	return (NULL);
+}
 
 void		draw_hud(t_god *game)
 {

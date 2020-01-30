@@ -1,0 +1,14 @@
+R 1000 600
+
+NO ./res/wall_1.xpm
+SO ./res/bluestone.xpm
+WE ./res/wood.xpm
+EA ./res/purplestone.xpm
+S ./res/pillar.xpm
+
+C 200,200,230
+F 100,15,110
+
+1 1 1
+1 S 1
+1 1 1

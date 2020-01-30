@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:52:33 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:51:59 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 03:03:16 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct		s_texture
 
 typedef struct		s_sprite
 {
+	int				two;
 	int				x;
 	int				y;
 	float			sprite_x;
@@ -77,6 +78,7 @@ typedef struct		s_sprite
 	unsigned char	color[4];
 	int				texture_x;
 	int				texture_y;
+	t_texture		*sprite;
 }					t_sprite;
 
 typedef struct		s_ray
@@ -136,6 +138,8 @@ typedef struct		s_world
 	t_texture		*s;
 	t_texture		*n;
 	t_texture		*sprite;
+	t_texture		*sprite2;
+	t_texture		*sprite3;
 	unsigned char	color_ceil[4];
 	unsigned char	color_ground[4];
 	t_list			*sprites;
@@ -160,6 +164,8 @@ typedef struct		s_cub
 	t_texture		*n;
 	t_texture		*s;
 	t_texture		*sprite;
+	t_texture		*sprite2;
+	t_texture		*sprite3;
 	t_list			*map_tmp;
 	int				**map;
 	int				width;
@@ -174,6 +180,7 @@ typedef struct		s_cub
 	int				map_started;
 }					t_cub;
 
+t_texture			*sprites(int x, int y, t_cub *info);
 void				set_color(unsigned char color[4], unsigned char r,
 					unsigned char j, unsigned char b);
 t_texture			*load_texture(void *mlx_ptr, char *filename);

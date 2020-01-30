@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:14:20 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 01:29:47 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 04:05:08 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void		create_map(t_cub *info)
 	char	*line;
 
 	lst = info->map_tmp;
+	info->px = -42;
 	info->map = ft_calloc(sizeof(int*), info->map_width);
 	x = -1;
 	while (++x < info->map_width)
