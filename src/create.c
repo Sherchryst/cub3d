@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 00:48:19 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 09:12:21 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 18:56:25 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ t_god		*creation(t_cub *info)
 	create->window = create_window(info, create);
 	FMOD_System_Create(&(create->system));
 	FMOD_System_Init(create->system, 2, FMOD_INIT_NORMAL, NULL);
-	FMOD_System_CreateSound(create->system, "res/jump.wav", FMOD_CREATESAMPLE, 0, &(create->j));
+	FMOD_System_CreateSound(create->system, "res/jump.wav",
+	FMOD_CREATESAMPLE, 0, &(create->j));
 	if (info->px == -42)
 		parserror(NULL);
 	return (create);

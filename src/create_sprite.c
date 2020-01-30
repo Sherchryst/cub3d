@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 01:32:47 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 03:34:20 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/30 18:57:14 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static void	draw_sprites_while2(t_god *game, t_sprite *sprite, int x, int y)
 	if (sprite->texture_x >= sprite->sprite->width ||
 		sprite->texture_y >= sprite->sprite->height)
 		return ;
-		get_pixel_color(sprite->sprite, sprite->texture_x,
+	get_pixel_color(sprite->sprite, sprite->texture_x,
 				sprite->texture_y, sprite->color);
 	if (sprite->color[3] != 255)
 		draw_pixel(game->window, x, y, sprite->color);
