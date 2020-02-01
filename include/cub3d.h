@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:52:33 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 08:22:01 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/01 20:43:10 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,9 @@ typedef struct		s_cub
 	unsigned char	ceil[3];
 	unsigned char	floor[3];
 	int				map_started;
+	int				p;
+	int				sp;
+	int				started;
 }					t_cub;
 
 t_texture			*sprites(int x, int y, t_cub *info);

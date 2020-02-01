@@ -43,6 +43,8 @@ $(LIBFT):
 
 all: $(NAME)
 
+bonus: all
+
 clean:
 	@rm -rf $(BUILD)
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"

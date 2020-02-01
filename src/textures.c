@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:05:21 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 04:44:55 by sgah             ###   ########.fr       */
+/*   Updated: 2020/01/31 16:03:36 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@ t_texture	*load_texture(void *mlx_ptr, char *filename)
 {
 	t_texture	*res;
 	int			config[3];
+	int			fd;
 
+	if ((fd = open(filename, O_RDONLY)) < 0)
+		parserror(NULL);
+	close(fd);
 	res = ft_calloc(sizeof(t_texture), 1);
 	res->ptr = mlx_xpm_file_to_image(mlx_ptr, filename,
 			&(res->width), &(res->height));

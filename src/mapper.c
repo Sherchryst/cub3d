@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:14:20 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 04:05:08 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/01 22:19:42 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,16 @@ static void	starter(char *line, t_cub *info, int x, int y)
 		info->px = x;
 		info->py = y;
 		info->orientation = *line;
+		info->started++;
+		if (info->started != 1)
+			parserror(info);
 	}
 	else
+	{
 		info->map[x][y] = ft_atoi(line);
+		if (info->map[x][y] == 3 && info->sp == 0)
+			parserror(info);
+	}
 }
 
 void		create_map(t_cub *info)

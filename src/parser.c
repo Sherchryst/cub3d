@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 16:46:09 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/28 17:01:36 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/01 22:12:42 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int			check_parsing(t_cub *info)
 {
+	if (!(info->p == 8 && info->sp == 0) && !(info->p == 9 && info->sp == 2))
+		parserror(info);
 	if (info->width <= 0 || info->height <= 0)
 		return (0);
 	if (!info->n->ptr || !info->s->ptr || !info->w->ptr || !info->e->ptr ||
@@ -40,10 +42,12 @@ void		parsing_info(char *line, t_cub *info)
 	type = line[i];
 	if (type == 'R')
 		parse_resolution(line, info);
-	if (type == 'N' || type == 'S' || type == 'W' || type == 'E')
+	else if (type == 'N' || type == 'S' || type == 'W' || type == 'E')
 		parse_texture(line, info);
-	if (type == 'C' || type == 'F')
+	else if (type == 'C' || type == 'F')
 		parse_color(line, info);
+	else
+		parserror(info);
 }
 
 void		parsing(char *line, t_cub *info)
@@ -75,6 +79,8 @@ t_cub		*parser(char *file)
 	info->mlx_tmp = mlx_init();
 	info->map_started = 0;
 	info->map_tmp = NULL;
+	info->p = 0;
+	info->sp = 0;
 	while ((ret = get_next_line(fd, &line)) > 0)
 	{
 		parsing(line, info);
@@ -82,6 +88,7 @@ t_cub		*parser(char *file)
 	}
 	parsing(line, info);
 	free(line);
+	close(fd);
 	if (!check_parsing(info))
 		parserror(info);
 	create_map(info);
