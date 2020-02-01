@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 00:48:19 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 18:56:25 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/01 23:29:54 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	init_world(t_world *world, t_cub *info)
 	world->map = info->map;
 	world->mx = info->map_width;
 	world->my = info->map_height;
-	world->px = info->px;
-	world->py = info->py;
+	world->px = info->px + 0.5;
+	world->py = info->py + 0.5;
 	world->pz = 0;
 	world->plane_x = (info->orientation == 'E'
 		|| info->orientation == 'W' ? 0.0 : 0.40);
