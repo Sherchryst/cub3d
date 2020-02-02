@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:29:22 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 08:02:40 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/03 00:04:15 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int			main(int ac, char **av)
 	t_cub		*info;
 	t_god		*create;
 
-	if (!ft_strnstr(av[1], ".cub", ft_strlen(av[1])))
+	if (ac > 3 || ac < 2 || !ft_strnstr(av[1], ".cub", ft_strlen(av[1])))
 		parserror(NULL);
 	info = parser(av[1]);
 	create = creation(info);
