@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 01:20:55 by sgah              #+#    #+#             */
-/*   Updated: 2020/02/01 22:19:42 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/10 19:40:52 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static unsigned char	color_parse_error(char c)
 	return (c);
 }
 
-void		parse_color(char *line, t_cub *info)
+void					parse_color(char *line, t_cub *info)
 {
 	char			type;
 	unsigned char	res[3];
@@ -30,25 +30,24 @@ void		parse_color(char *line, t_cub *info)
 	while (ft_isspace(*line))
 		line++;
 	res[0] = (ft_isdigit(*line)) ? (unsigned char)ft_atoi(line) :
-														color_parse_error(*line);
+													color_parse_error(*line);
 	while (ft_isdigit(*line))
 		line++;
 	line += (*line == ',');
 	res[1] = (ft_isdigit(*line)) ? (unsigned char)ft_atoi(line) :
-														color_parse_error(*line);
+													color_parse_error(*line);
 	while (ft_isdigit(*line))
 		line++;
 	line += (*line == ',');
 	res[2] = (ft_isdigit(*line)) ? (unsigned char)ft_atoi(line) :
-														color_parse_error(*line);
+													color_parse_error(*line);
 	if (type == 'C')
 		set_color(info->ceil, res[0], res[1], res[2]);
 	else if (type == 'F')
 		set_color(info->floor, res[0], res[1], res[2]);
-	info->p++;
 }
 
-void		parse_resolution(char *line, t_cub *info)
+void					parse_resolution(char *line, t_cub *info)
 {
 	while (ft_isspace(*line))
 		line++;
@@ -62,7 +61,7 @@ void		parse_resolution(char *line, t_cub *info)
 	info->p++;
 }
 
-void		parse_texture(char *line, t_cub *info)
+void					parse_texture(char *line, t_cub *info)
 {
 	char	type[2];
 
@@ -89,5 +88,4 @@ void		parse_texture(char *line, t_cub *info)
 		info->sprite2 = load_texture(info->mlx_tmp, line);
 		info->sp = 2;
 	}
-	info->p++;
 }

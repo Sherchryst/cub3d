@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 03:52:33 by sgah              #+#    #+#             */
-/*   Updated: 2020/02/01 20:43:10 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/10 19:09:53 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,6 +187,7 @@ typedef struct		s_cub
 }					t_cub;
 
 t_texture			*sprites(int x, int y, t_cub *info);
+int					ft_endfile(char *file);
 void				set_color(unsigned char color[4], unsigned char r,
 					unsigned char j, unsigned char b);
 t_texture			*load_texture(void *mlx_ptr, char *filename);

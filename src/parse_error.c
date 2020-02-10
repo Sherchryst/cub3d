@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 17:13:51 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/29 17:41:33 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/10 19:34:08 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,13 @@ void			parserror(t_cub *info)
 		clean_info(info);
 	write(1, "Error\n", 6);
 	exit(0);
+}
+
+int				ft_endfile(char *file)
+{
+	static char	*type = ".cub";
+	int			i;
+
+	i = ft_strlen(file) - 4;
+	return (ft_strncmp(type, file + i, 4) == 0);
 }

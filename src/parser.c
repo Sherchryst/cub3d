@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 16:46:09 by sgah              #+#    #+#             */
-/*   Updated: 2020/02/01 22:12:42 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/10 19:44:08 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,15 @@ void		parsing_info(char *line, t_cub *info)
 	if (type == 'R')
 		parse_resolution(line, info);
 	else if (type == 'N' || type == 'S' || type == 'W' || type == 'E')
+	{
 		parse_texture(line, info);
+		info->p++;
+	}
 	else if (type == 'C' || type == 'F')
+	{
 		parse_color(line, info);
+		info->p++;
+	}
 	else
 		parserror(info);
 }
@@ -88,7 +94,6 @@ t_cub		*parser(char *file)
 	}
 	parsing(line, info);
 	free(line);
-	close(fd);
 	if (!check_parsing(info))
 		parserror(info);
 	create_map(info);
