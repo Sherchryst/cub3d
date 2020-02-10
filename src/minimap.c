@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 01:05:12 by sgah              #+#    #+#             */
-/*   Updated: 2020/01/30 08:37:42 by sgah             ###   ########.fr       */
+/*   Updated: 2020/02/10 22:12:15 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void			draw_minimap(t_god *game)
 		i = 0;
 		while (i < game->world->mx)
 		{
-			color_case(j, i, game, color);
+			color_case(i, j, game, color);
 			rect.x = game->window->width - (game->world->mx * 5) - 5 + (i * 5);
 			rect.y = game->window->height - (game->world->my * 5) - 5 + (j * 5);
 			rect.height = 4;
