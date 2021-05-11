@@ -33,3 +33,11 @@ avec une minimap et une barre de saut, un système de captures d'écran et un ef
 
 À noter que le jeu n'a pas forcément beaucoup de sens, puisqu'il s'agit de se balader à travers un labyrinthe...
 Le lien ci-dessous permet de télécharger et de jouer à la version Mac du jeu.
+
+
+#Compile and launch
+
+```git clone https://github.com/sherchryst/cub3d```
+```cd cub3d```
+```make```
+```./cub3d maps/map_bonus.cub```
