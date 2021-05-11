@@ -38,6 +38,9 @@ Le lien ci-dessous permet de télécharger et de jouer à la version Mac du jeu.
 #Compile and launch
 
 ```git clone https://github.com/sherchryst/cub3d```
+##
 ```cd cub3d```
+##
 ```make```
+##
 ```./cub3d maps/map_bonus.cub```
