@@ -16,7 +16,7 @@ with a minimap and a jump bar, a screenshot system and a sound effects.
 Note that the game does not necessarily have a lot of meaning, since it is about walking through a labyrinth ...
 The link below is to download and play the Mac version of the game.
 
-
+#
 
 Cub3D est un copycat du célèbre jeu vidéo de tir à la première personne Wolfenstein 3D, sorti en 1992.
 
