@@ -35,7 +35,7 @@ avec une minimap et une barre de saut, un système de captures d'écran et un ef
 Le lien ci-dessous permet de télécharger et de jouer à la version Mac du jeu.
 
 
-#Compile and launch
+# Compile and launch
 
 ```git clone https://github.com/sherchryst/cub3d```
 ##
